@@ -3,6 +3,7 @@
 *.fig
 /figma/
 *.css
+*.css.map
 !styles/style.css
 .DS_Store
 .prettierignore
