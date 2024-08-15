@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/testimonials-grid-section-using-flexbox-and-css-grid-D4x3Qp5v8)
+- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-testimonial-grid-built-with-sassscss-grid-and-flex-WKxnfktXEO)
 - Live Site URL: [Live site here](https://jomagene.github.io/testimonial-grid/)
 
 ## My Process
@@ -53,11 +53,9 @@ I learned the importance of specificity in CSS. I encountered an issue where sty
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5625rem 1.875rem;
   }
-  .bg-violet {
-    grid-column: 1 / span 2;
-  }
+  .bg-violet,
   .bg-blackish-blue {
-    grid-column: 2 / span 2;
+    grid-column: span 2;
   }
   article.last {
     grid-area: 1 / 4 / span 2;
