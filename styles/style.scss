@@ -1,6 +1,7 @@
+// Import the reset file
 @import "reset";
 
-// Add variable colors
+// Color Variables
 $moderate-violet: hsl(263, 55%, 52%);
 $very-dark-grayish-blue: hsl(217, 19%, 35%);
 $very-dark-blackish-blue: hsl(219, 29%, 14%);
@@ -8,35 +9,41 @@ $white: hsl(0, 0%, 100%);
 $light-gray: hsl(0, 0%, 81%);
 $light-grayish-blue: hsl(210, 46%, 95%);
 
+// Font Size Variables
 $font-11: 0.6875rem;
 $font-13: 0.8125rem;
 $font-20: 1.25rem;
 
+// Gap Variables
 $gap-17: 1.0625rem;
 $gap-24: 1.5rem;
 $gap-30: 1.875rem;
 
-// Some reusable classes
-
+// Reusable Classes for Background Colors
 .bg-violet,
 .bg-grayish-blue,
 .bg-blackish-blue {
   color: $light-grayish-blue;
 }
+
 .bg-violet {
   background-color: $moderate-violet;
 }
+
 .bg-grayish-blue {
   background-color: $very-dark-grayish-blue;
 }
+
 .bg-blackish-blue {
   background-color: $very-dark-blackish-blue;
 }
+
 .bg-white {
   color: $very-dark-grayish-blue;
   background-color: $white;
 }
 
+// Base Styles
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: $font-13;
@@ -47,42 +54,55 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+// Article Styles
 article:first-child {
   position: relative;
+
   h2 {
     z-index: 1;
   }
+
   .quotation {
     position: absolute;
     top: 0;
     right: 15%;
   }
 }
+
+// Main Grid Layout
 main {
   display: grid;
   gap: 1.5rem;
   margin: 5rem 1.5rem;
   max-width: 69.375rem;
   height: fit-content;
+
+  // Article Content
   article {
     padding: 1.7rem 2rem 1.75rem;
     display: flex;
     flex-direction: column;
     border-radius: 0.5rem;
+
+    // Figure Styles
     figure {
       display: flex;
       align-items: center;
       gap: $gap-17;
+
       img {
         height: 1.75rem;
         border-radius: 50%;
         align-self: flex-start;
       }
+
       figcaption {
         display: flex;
         flex-direction: column;
         gap: 0.125rem;
         line-height: 1em;
+
         p:last-child {
           line-height: 1.5em;
           font-size: $font-11;
@@ -90,12 +110,16 @@ main {
         }
       }
     }
+
+    // Heading Styles
     h2 {
       font-size: $font-20;
       line-height: 1.2;
       padding: 0.835rem 0 1.28rem;
       font-weight: 600;
     }
+
+    // Blockquote Styles
     blockquote {
       line-height: 1.385;
       font-size: $font-13;
@@ -103,18 +127,23 @@ main {
     }
   }
 }
+
+// Responsive Layout for Larger Screens
 @media (min-width: 64rem) {
   main {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5625rem 1.875rem;
+
     .bg-violet {
       grid-column: 1 / span 2;
     }
+
     .bg-blackish-blue {
       grid-column: 2 / span 2;
     }
+
     article.last {
-      grid-area: 1 /4 / span 2;
+      grid-area: 1 / 4 / span 2;
     }
   }
 }
