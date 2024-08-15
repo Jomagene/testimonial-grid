@@ -1,1 +1,108 @@
 @import "reset";
+
+// Add variable colors
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+$font-11: 0.6875rem;
+$font-13: 0.8125rem;
+$font-20: 1.25rem;
+
+$gap-17: 1.0625rem;
+$gap-24: 1.5rem;
+$gap-30: 1.875rem;
+
+// Some reusable classes
+
+.bg-violet,
+.bg-grayish-blue,
+.bg-blackish-blue {
+  color: $white;
+}
+.bg-violet {
+  background-color: $moderate-violet;
+}
+.bg-grayish-blue {
+  background-color: $very-dark-grayish-blue;
+}
+.bg-blackish-blue {
+  background-color: $very-dark-blackish-blue;
+}
+.bg-white {
+  color: $very-dark-grayish-blue;
+  background-color: $white;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: $font-13;
+  font-weight: 500;
+  background-color: $light-grayish-blue;
+  min-height: 56.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  display: grid;
+  gap: 1.5rem;
+  padding: 5rem 1.5rem;
+  max-width: 69.375rem;
+  article {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    figure {
+      display: flex;
+      gap: $gap-17;
+      img {
+        height: 38px;
+        border-radius: 50%;
+      }
+      figcaption {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        line-height: 1em;
+        p:last-child {
+          line-height: 1.5em;
+          font-size: $font-11;
+          opacity: 50%;
+        }
+      }
+    }
+    h2 {
+      font-size: $font-20;
+      line-height: 1.2em;
+      font-weight: 600;
+    }
+    blockquote {
+      line-height: 1.3846em;
+      font-size: $font-13;
+      opacity: 70%;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    main {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.875rem;
+      padding: 0;
+      .bg-violet {
+        grid-column: 1 / span 2;
+      }
+      .bg-blackish-blue {
+        grid-column: 2 / span 2;
+      }
+      article.last {
+        grid-area: 1 /4 / span 2;
+      }
+    }
+  }
+}

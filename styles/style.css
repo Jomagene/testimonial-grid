@@ -28,4 +28,97 @@ h2 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+.bg-violet,
+.bg-grayish-blue,
+.bg-blackish-blue {
+  color: hsl(0, 0%, 100%);
+}
+
+.bg-violet {
+  background-color: hsl(263, 55%, 52%);
+}
+
+.bg-grayish-blue {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.bg-blackish-blue {
+  background-color: hsl(219, 29%, 14%);
+}
+
+.bg-white {
+  color: hsl(217, 19%, 35%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background-color: hsl(210, 46%, 95%);
+  min-height: 56.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  padding: 5rem 1.5rem;
+  max-width: 69.375rem;
+}
+main article {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+main article figure {
+  display: flex;
+  gap: 1.0625rem;
+}
+main article figure img {
+  height: 38px;
+  border-radius: 50%;
+}
+main article figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1em;
+}
+main article figure figcaption p:last-child {
+  line-height: 1.5em;
+  font-size: 0.6875rem;
+  opacity: 50%;
+}
+main article h2 {
+  font-size: 1.25rem;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+main article blockquote {
+  line-height: 1.3846em;
+  font-size: 0.8125rem;
+  opacity: 70%;
+}
+
+@media (min-width: 1024px) {
+  body main {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.875rem;
+    padding: 0;
+  }
+  body main .bg-violet {
+    grid-column: 1/span 2;
+  }
+  body main .bg-blackish-blue {
+    grid-column: 2/span 2;
+  }
+  body main article.last {
+    grid-area: 1/4/span 2;
+  }
 }/*# sourceMappingURL=style.css.map */
