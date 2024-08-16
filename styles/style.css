@@ -132,6 +132,10 @@ main article blockquote {
   main .bg-blackish-blue {
     grid-column: span 2;
   }
+  main .bg-violet figure img,
+  main .bg-blackish-blue figure img {
+    border: 1px violet solid;
+  }
   main article.last {
     grid-area: 1/4/span 2;
   }
